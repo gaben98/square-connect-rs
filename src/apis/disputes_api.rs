@@ -122,7 +122,7 @@ pub async fn accept_dispute(configuration: &configuration::Configuration, disput
 }
 
 /// Uploads a file to use as evidence in a dispute challenge. The endpoint accepts HTTP multipart/form-data file uploads in HEIC, HEIF, JPEG, PDF, PNG, and TIFF formats.
-pub async fn create_dispute_evidence_file(configuration: &configuration::Configuration, dispute_id: &str, request: Option<models::models::CreateDisputeEvidenceFileRequest>, image_file: Option<std::path::PathBuf>) -> Result<models::CreateDisputeEvidenceFileResponse, Error<CreateDisputeEvidenceFileError>> {
+pub async fn create_dispute_evidence_file(configuration: &configuration::Configuration, dispute_id: &str, request: Option<models::CreateDisputeEvidenceFileRequest>, image_file: Option<std::path::PathBuf>) -> Result<models::CreateDisputeEvidenceFileResponse, Error<CreateDisputeEvidenceFileError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_dispute_id = dispute_id;
     let p_form_request = request;

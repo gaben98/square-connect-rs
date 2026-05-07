@@ -278,7 +278,7 @@ pub async fn catalog_info(configuration: &configuration::Configuration, ) -> Res
 }
 
 /// Uploads an image file to be represented by a [CatalogImage](entity:CatalogImage) object that can be linked to an existing [CatalogObject](entity:CatalogObject) instance. The resulting `CatalogImage` is unattached to any `CatalogObject` if the `object_id` is not specified.  This `CreateCatalogImage` endpoint accepts HTTP multipart/form-data requests with a JSON part and an image file part in JPEG, PJPEG, PNG, or GIF format. The maximum file size is 15MB.
-pub async fn create_catalog_image(configuration: &configuration::Configuration, request: Option<models::models::CreateCatalogImageRequest>, image_file: Option<std::path::PathBuf>) -> Result<models::CreateCatalogImageResponse, Error<CreateCatalogImageError>> {
+pub async fn create_catalog_image(configuration: &configuration::Configuration, request: Option<models::CreateCatalogImageRequest>, image_file: Option<std::path::PathBuf>) -> Result<models::CreateCatalogImageResponse, Error<CreateCatalogImageError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_form_request = request;
     let p_form_image_file = image_file;
@@ -556,7 +556,7 @@ pub async fn search_catalog_objects(configuration: &configuration::Configuration
 }
 
 /// Uploads a new image file to replace the existing one in the specified [CatalogImage](entity:CatalogImage) object.  This `UpdateCatalogImage` endpoint accepts HTTP multipart/form-data requests with a JSON part and an image file part in JPEG, PJPEG, PNG, or GIF format. The maximum file size is 15MB.
-pub async fn update_catalog_image(configuration: &configuration::Configuration, image_id: &str, request: Option<models::models::UpdateCatalogImageRequest>, image_file: Option<std::path::PathBuf>) -> Result<models::UpdateCatalogImageResponse, Error<UpdateCatalogImageError>> {
+pub async fn update_catalog_image(configuration: &configuration::Configuration, image_id: &str, request: Option<models::UpdateCatalogImageRequest>, image_file: Option<std::path::PathBuf>) -> Result<models::UpdateCatalogImageResponse, Error<UpdateCatalogImageError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_image_id = image_id;
     let p_form_request = request;

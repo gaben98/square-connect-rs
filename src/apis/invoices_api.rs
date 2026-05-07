@@ -172,7 +172,7 @@ pub async fn create_invoice(configuration: &configuration::Configuration, create
 }
 
 /// Uploads a file and attaches it to an invoice. This endpoint accepts HTTP multipart/form-data file uploads with a JSON `request` part and a `file` part. The `file` part must be a `readable stream` that contains a file in a supported format: GIF, JPEG, PNG, TIFF, BMP, or PDF.  Invoices can have up to 10 attachments with a total file size of 25 MB. Attachments can be added only to invoices in the `DRAFT`, `SCHEDULED`, `UNPAID`, or `PARTIALLY_PAID` state.  __NOTE:__ When testing in the Sandbox environment, the total file size is limited to 1 KB.
-pub async fn create_invoice_attachment(configuration: &configuration::Configuration, invoice_id: &str, request: Option<models::models::CreateInvoiceAttachmentRequest>, image_file: Option<std::path::PathBuf>) -> Result<models::CreateInvoiceAttachmentResponse, Error<CreateInvoiceAttachmentError>> {
+pub async fn create_invoice_attachment(configuration: &configuration::Configuration, invoice_id: &str, request: Option<models::CreateInvoiceAttachmentRequest>, image_file: Option<std::path::PathBuf>) -> Result<models::CreateInvoiceAttachmentResponse, Error<CreateInvoiceAttachmentError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_path_invoice_id = invoice_id;
     let p_form_request = request;
